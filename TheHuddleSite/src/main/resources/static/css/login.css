@@ -5,8 +5,8 @@
 }
 
 body {
-    margin: 15;
-    padding: 15;
+    margin: 15px;
+    padding: 15px;
     font-weight: 400;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 1rem;
@@ -37,17 +37,48 @@ body:before {
 .form-group {
     margin-bottom: 15px;
 }
+button {
+    box-shadow: none;
+    border: 1px solid transparent;
+    font-size: 14px;
+    outline: none;
+    line-height: 100%;
+    white-space: nowrap;
+    vertical-align: middle;
+    padding: 0.6rem 1rem;
+    border-radius: 2px;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    min-height: 38px;
+}
+button.default {
+    background-color: #4872ff;
+    color: #333;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12);
+}
+
+button.primary {
+    background-color: #2f4d80;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12);
+    color: #4e52ff;
+}
+
+button.accent {
+    background-color: #797cff;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12);
+    color: #fff;
+}
 
 input {
     padding-left: 10px;
     outline: none;
 }
 
-#username-page {
+#login-page {
     text-align: center;
 }
 
-.username-page-container {
+.login-page-container {
     background: #008040;
     box-shadow: 0 1px 11px rgba(15, 0, 0, 0.27);
     border-radius: 2px;
@@ -67,7 +98,7 @@ input {
     margin-top: -160px;
 }
 
-.username-page-container .username-submit {
+.login-page-container .login-submit {
     margin-top: 10px;
 }
 
@@ -95,9 +126,6 @@ input {
     margin-top: -160px;
 }
 
-.password-page-container .password-submit {
+.registration-page-container .registration-submit {
     margin-top: 10px;
 }
-
-
-

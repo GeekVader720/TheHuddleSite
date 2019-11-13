@@ -32,14 +32,13 @@ public class TemplateController {
     }
 
     @GetMapping("/main")
-    public String getMain() {
-        return "chatroom";
-    }
+    public String getMain() { return "main"; }
+
+    @GetMapping("/chatroom")
+    public String getChat() { return "chatroom"; }
 
     @GetMapping("/signup")
-    public String getSignup() {
-        return "signup";
-    }
+    public String getSignup() { return "signup"; }
 
     @PostMapping(value = "/signup")
     public RedirectView postSignup(@ModelAttribute User user) {

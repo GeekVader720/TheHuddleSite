@@ -1,8 +1,15 @@
 var usernameForm = document.querySelector('#usernameForm');
 var usernamePage = document.querySelector('#username-page');
+var passwordPage = document.querySelector('password-page');
+var passwordForm = document.querySelector('passwordForm');
+
+var stompClient = null;
+var username = null;
+var password = null;
 
 function connect(event) {
     username = document.querySelector('#name').value.trim();
+    password = document.querySelector('#authentification').value.trim();
 
     if (username) {
         usernamePage.classList.add('hidden');

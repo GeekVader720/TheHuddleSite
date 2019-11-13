@@ -2,7 +2,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <title>The Huddle:The Best Social Media Site For Football</title>
-    <link rel="stylesheet" href="/css/main.css"/>
+    <link rel="stylesheet" href="/css/chatroom.css"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
@@ -12,12 +12,12 @@
     <h2>Sorry! Your browser doesn't support Javascript</h2>
 </noscript>
 
-<div id="username-page">
+<div id="select-page">
 
-    <div class="username-page-container">
+    <div class="select-page-container">
         <h1 class="title">The Huddle Chat Room!</h1>
         <h2 class="title" th:text="${someVariable}"></h2>
-        <form id="usernameForm" name="usernameForm">
+        <form id="selectForm" name="selectForm">
             <div class="dropdown">
                 <div class="dropdown">
                     <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
@@ -26,20 +26,14 @@
                     </a>
 
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
+                        <a class="dropdown-item" href="#">Public Chat</a>
+                        <a class="dropdown-item" href="#">Private Chat</a>
+                        <a class="dropdown-item" href="#">Multiple Chats</a>
                     </div>
                 </div>
             </div>
             <div class="form-group">
-                <input type="text" id="name" placeholder="Username" autocomplete="off" class="form-control"/>
-            </div>
-            <div class="form-group">
-                <button type="submit" class="accent username-submit">Sign In!</button>
-            </div>
-            <div class="form-group">
-                <button type="submit" class="accent registrationPage-submit">Register Here!</button>
+                <button type="submit" class="accent select-submit">Move To Chat Selection!</button>
             </div>
         </form>
     </div>

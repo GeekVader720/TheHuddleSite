@@ -1,4 +1,4 @@
-var usernameForm = document.querySelector('#usernameForm');
+/*var usernameForm = document.querySelector('#usernameForm');
 var usernamePage = document.querySelector('#username-page');
 var passwordPage = document.querySelector('password-page');
 var passwordForm = document.querySelector('passwordForm');
@@ -32,4 +32,4 @@ function onConnected() {
         {},
         JSON.stringify({sender: username, type: 'JOIN'})
     )
-}
+}*/

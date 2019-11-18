@@ -2,7 +2,6 @@ package com.javalec.spring.TheHuddleSite.model;
 
 import javax.persistence.Entity;
 
-//@Entity
 public class Messaging {
     private MessageType type;
     private String content;

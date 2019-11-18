@@ -12,7 +12,7 @@ var connectingElement = document.querySelector('.connecting');
 
 var stompClient = null;
 var username = null;
-var password = null;
+/*var password = null;*/
 
 var colors = [
     '#2196F3', '#32c787', '#00BCD4', '#ff5652',
@@ -21,7 +21,7 @@ var colors = [
 
 function connect(event) {
     username = document.querySelector('#name').value.trim();
-    password = document.querySelector('#authentication').value.trim();
+   /* password = document.querySelector('#authentication').value.trim();*/
 
     if(username) {
         usernamePage.classList.add('hidden');

@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
@@ -17,7 +18,11 @@
     <div class="select-page-container">
         <h1 class="title">The Huddle Chat Room!</h1>
         <h2 class="title" th:text="${someVariable}"></h2>
-        <form id="selectForm" name="selectForm">
+        <form id="usernameForm" name="usernameForm">
+            <div class="form-group">
+                <input type="text" id="name" placeholder="Username" autocomplete="off" class="form-control" />
+            </div>
+
             <div class="dropdown">
                 <div class="dropdown">
                     <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
@@ -26,7 +31,7 @@
                     </a>
 
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <a class="dropdown-item" href="#">Public Chat</a>
+                        <a class="dropdown-item" href="#chat-page">Public Chat</a>
                         <a class="dropdown-item" href="#">Private Chat</a>
                         <a class="dropdown-item" href="#">Multiple Chats</a>
                     </div>
@@ -34,29 +39,6 @@
             </div>
             <div class="form-group">
                 <button type="submit" class="accent select-submit">Move To Chat Selection!</button>
-            </div>
-        </form>
-    </div>
-</div>
-
-<div id="chat-page" class="hidden">
-    <div class="chat-container">
-        <div class="chat-header">
-            <h2>Register Below</h2>
-        </div>
-        <div class="connecting">
-            Connecting...
-        </div>
-        <ul id="messageArea">
-
-        </ul>
-        <form id="messageForm" name="messageForm">
-            <div class="form-group">
-                <div class="input-group clearfix">
-                    <input type="text" id="message" placeholder="Type a message..." autocomplete="off"
-                           class="form-control"/>
-                    <button type="submit" class="primary">Send</button>
-                </div>
             </div>
         </form>
     </div>

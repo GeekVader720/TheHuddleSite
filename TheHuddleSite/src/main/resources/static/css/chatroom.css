@@ -72,19 +72,19 @@ a {
 }
 
 button {
-     box-shadow: none;
-     border: 1px solid transparent;
-     font-size: 14px;
-     outline: none;
-     line-height: 100%;
-     white-space: nowrap;
-     vertical-align: middle;
-     padding: 0.6rem 1rem;
-     border-radius: 2px;
-     transition: all 0.2s ease-in-out;
-     cursor: pointer;
-     min-height: 38px;
- }
+    box-shadow: none;
+    border: 1px solid transparent;
+    font-size: 14px;
+    outline: none;
+    line-height: 100%;
+    white-space: nowrap;
+    vertical-align: middle;
+    padding: 0.6rem 1rem;
+    border-radius: 2px;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    min-height: 38px;
+}
 
 button.default {
     background-color: #00ffff;
@@ -104,11 +104,11 @@ button.accent {
     color: #fff;
 }
 
-#select-page {
+#username-page-page {
     text-align: center;
 }
 
-.select-page-container {
+.username-page-container {
     background: #008040;
     box-shadow: 0 1px 11px rgba(15, 0, 0, 0.27);
     border-radius: 2px;
@@ -128,7 +128,7 @@ button.accent {
     margin-top: -160px;
 }
 
-.select-page-container .select-submit {
+.username-page-container .username-submit {
     margin-top: 10px;
 }
 

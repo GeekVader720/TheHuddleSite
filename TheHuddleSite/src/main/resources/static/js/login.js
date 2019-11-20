@@ -1,35 +1,18 @@
-/*var usernameForm = document.querySelector('#usernameForm');
-var usernamePage = document.querySelector('#username-page');
-var passwordPage = document.querySelector('password-page');
-var passwordForm = document.querySelector('passwordForm');
+function validate() {
+    if (document.usernameForm.username.value == "" && document.passwordForm.password.value == "") {
+        alert("${noUser} and ${noPass}");
 
-var stompClient = null;
-var username = null;
-var password = null;
-
-function connect(event) {
-    username = document.querySelector('#name').value.trim();
-    password = document.querySelector('#authentification').value.trim();
-
-    if (username) {
-        usernamePage.classList.add('hidden');
-        chatPage.classList.remove('hidden');
-
-        var socket = new SockJS('/ws');
-        stompClient = Stomp.over(socket);
-
-        stompClient.connect({}, onConnected, onError);
+        document.usernameForm.username.focus();
+        return false;
     }
-    event.preventDefault();
+    if (document.usernameForm.username.value == "") {
+        alert("${noUser}");
+        document.usernameForm.username.focus();
+        return false;
+    }
+    if (document.f.password.value == "") {
+        alert("${noPass}");
+        document.passwordForm.password.focus();
+        return false;
+    }
 }
-
-function onConnected() {
-    // Subscribe to the Public Topic
-    stompClient.subscribe('/topic/public', onMessageReceived);
-
-    // Tell your username to the server
-    stompClient.send("/app/chat.addUser",
-        {},
-        JSON.stringify({sender: username, type: 'JOIN'})
-    )
-}*/

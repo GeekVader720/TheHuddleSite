@@ -1,4 +1,10 @@
-/*package com.javalec.spring.TheHuddleSite.model;
+package com.javalec.spring.TheHuddleSite.model;
+
+import com.javalec.spring.TheHuddleSite.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.UserDetailsRepositoryReactiveAuthenticationManager;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
@@ -19,7 +25,7 @@ public class UserDto {
     private String password;
     private String matchingPassword;
 
-    @ValidEmail
+
     @NotNull
     @NotEmpty
     private String email;
@@ -46,4 +52,32 @@ public class UserDto {
 
     // standard getters and setters
 }
-*/
+
+  /*  @Autowired
+    UserDetailsRepository userRepository;
+
+    public UserDetails loadUserByUsername(String email)
+            throws UsernameNotFoundException {
+
+        boolean enabled = true;
+        boolean accountNonExpired = true;
+        boolean credentialsNonExpired = true;
+        boolean accountNonLocked = true;
+        try {
+            User user = userRepository.findByEmail(email);
+            if (user == null) {
+                throw new UsernameNotFoundException(
+                        "No user found with username: " + email);
+            }
+
+            return new org.springframework.security.core.userdetails.User(
+                    user.getEmail(),
+                    user.getPassword().toLowerCase(),
+                    user.isEnabled(),
+                    accountNonExpired,
+                    credentialsNonExpired,
+                    accountNonLocked,
+                    getAuthorities(user.getRole()));
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }*/

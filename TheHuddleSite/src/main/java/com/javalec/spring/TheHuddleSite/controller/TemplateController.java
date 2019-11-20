@@ -1,9 +1,12 @@
 package com.javalec.spring.TheHuddleSite.controller;
 
+/*import com.javalec.spring.TheHuddleSite.config.OnRegistrationCompleteEvent;*/
 import com.javalec.spring.TheHuddleSite.model.User;
 /*import com.javalec.spring.TheHuddleSite.model.UserDto;*/
+import com.javalec.spring.TheHuddleSite.model.UserDto;
 import com.javalec.spring.TheHuddleSite.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Controller;
 /*import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -29,24 +32,30 @@ public class TemplateController {
     }
 
 
-    @GetMapping("/login")
+    @GetMapping("/login.jsp")
     public String getLogin() {
-        return "login";
+        return "login.jsp";
     }
 
     @GetMapping
     public String getRoot() {
-        return "login";
+        return "login.jsp";
     }
 
     @GetMapping("/main")
-    public String getMain() { return "main"; }
+    public String getMain() {
+        return "main";
+    }
 
     @GetMapping("/chatroom")
-    public String getChat() { return "chatroom"; }
+    public String getChat() {
+        return "chatroom";
+    }
 
     @GetMapping("/signup")
-    public String getSignup() { return "signup"; }
+    public String getSignup() {
+        return "signup";
+    }
 
     @PostMapping(value = "/signup")
     public RedirectView postSignup(@ModelAttribute User user) {
@@ -60,11 +69,41 @@ public class TemplateController {
     }
 
     @GetMapping("/user")
-    public @ResponseBody User getUser() {
+    public @ResponseBody
+    User getUser() {
         return userRepository.findAll().get(0);
     }
+}
 
- /*   @RequestMapping(value = "/user/registration", method = RequestMethod.GET)
+    /*@Autowired
+    ApplicationEventPublisher eventPublisher;
+
+    @RequestMapping(value = "/user/registration", method = RequestMethod.POST)
+    public ModelAndView registerUserAccount(
+            @ModelAttribute("user") @Valid UserDto accountDto,
+            BindingResult result,
+            WebRequest request,
+            Errors errors) {
+
+        if (result.hasErrors()) {
+            return new ModelAndView("registration", "user", accountDto);
+        }
+
+        User registered = createUserAccount(accountDto);
+        if (registered == null) {
+            result.rejectValue("email", "message.regError");
+        }
+        try {
+            String appUrl = request.getContextPath();
+            eventPublisher.publishEvent(new OnRegistrationCompleteEvent
+                    (registered, request.getLocale(), appUrl));
+        } catch (Exception me) {
+            return new ModelAndView("emailError", "user", accountDto);
+        }
+        return new ModelAndView("successRegister", "user", accountDto);
+    }
+
+  @RequestMapping(value = "/user/registration", method = RequestMethod.GET)
     public String showRegistrationForm(WebRequest request, Model model) {
         UserDto userDto = new UserDto();
         model.addAttribute("user", userDto);
@@ -91,6 +130,6 @@ public class TemplateController {
             return null;
         }
         return registered;
-    }*/
+    }
 
-}
+}*/

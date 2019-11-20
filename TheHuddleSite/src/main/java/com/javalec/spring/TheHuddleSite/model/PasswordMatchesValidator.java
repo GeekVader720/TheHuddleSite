@@ -1,4 +1,4 @@
-/*package com.javalec.spring.TheHuddleSite.model;
+package com.javalec.spring.TheHuddleSite.model;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
@@ -12,4 +12,3 @@ public class PasswordMatchesValidator implements ConstraintValidator<PasswordMat
     return user.getPassword().equals(user.getMatchingPassword());
     }
 }
-*/

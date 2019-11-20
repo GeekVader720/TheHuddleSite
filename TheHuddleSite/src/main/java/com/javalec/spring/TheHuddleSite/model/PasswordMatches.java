@@ -1,4 +1,4 @@
-/*package com.javalec.spring.TheHuddleSite.model;
+package com.javalec.spring.TheHuddleSite.model;
 
 import javax.validation.Constraint;
 import javax.validation.ConstraintValidator;
@@ -16,4 +16,3 @@ public @interface PasswordMatches {
     Class<? extends Payload>[] payload() default {};
 }
 
-*/

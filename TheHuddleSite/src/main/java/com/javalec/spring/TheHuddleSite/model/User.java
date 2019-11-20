@@ -25,10 +25,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.ModelAndView;*/
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 /*import javax.validation.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
@@ -59,7 +56,12 @@ public class User {
 
     private String password;
 
+    @Column(name = "enabled")
+    private boolean enabled;
+
     public User() {
+        super();
+        this.enabled=false;
     }
 
     public Long getId() {
@@ -93,6 +95,7 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
+
 
 }
 

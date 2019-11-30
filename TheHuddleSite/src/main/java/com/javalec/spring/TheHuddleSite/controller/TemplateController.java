@@ -1,10 +1,13 @@
 package com.javalec.spring.TheHuddleSite.controller;
 
 /*import com.javalec.spring.TheHuddleSite.config.OnRegistrationCompleteEvent;*/
+
+import com.javalec.spring.TheHuddleSite.model.MyUserPrincipal;
 import com.javalec.spring.TheHuddleSite.model.User;
 /*import com.javalec.spring.TheHuddleSite.model.UserDto;*/
 import com.javalec.spring.TheHuddleSite.model.UserDto;
 import com.javalec.spring.TheHuddleSite.repository.UserRepository;
+import com.sun.security.auth.UserPrincipal;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Controller;
@@ -18,6 +21,7 @@ import org.springframework.web.servlet.mvc.annotation.ModelAndViewResolver;*/
 import org.springframework.web.servlet.view.RedirectView;
 
 /*import javax.validation.Valid;*/
+import java.security.Principal;
 import java.util.Map;
 
 @Controller
@@ -33,13 +37,16 @@ public class TemplateController {
 
 
     @GetMapping("/login")
-    public String getLogin() {
+    public String getLogin(MyUserPrincipal userPrincipal) {
+        if (userPrincipal.getUser() != null) {
+            return "redirect:/main";
+        }
         return "login";
     }
 
     @GetMapping
     public String getRoot() {
-        return "login";
+        return "redirect:/main";
     }
 
     @GetMapping("/main")

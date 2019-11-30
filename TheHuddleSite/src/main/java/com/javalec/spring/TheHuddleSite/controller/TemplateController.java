@@ -32,14 +32,14 @@ public class TemplateController {
     }
 
 
-    @GetMapping("/login.jsp")
+    @GetMapping("/login")
     public String getLogin() {
-        return "login.jsp";
+        return "login";
     }
 
     @GetMapping
     public String getRoot() {
-        return "login.jsp";
+        return "login";
     }
 
     @GetMapping("/main")
@@ -63,10 +63,10 @@ public class TemplateController {
         return new RedirectView("login");
     }
 
-    @PostMapping(value = "/login")
-    public RedirectView postLogin(@RequestBody Map<String, Object> body) {
-        return new RedirectView("login");
-    }
+//    @PostMapping(value = "/login")
+//    public RedirectView postLogin(@RequestBody Map<String, Object> body) {
+//        return new RedirectView("login");
+//    }
 
     @GetMapping("/user")
     public @ResponseBody

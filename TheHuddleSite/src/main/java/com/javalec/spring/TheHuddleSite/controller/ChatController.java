@@ -17,6 +17,7 @@ public class ChatController {
         return ultMessage;
     }
 
+
     @MessageMapping("/chat.addUser")
     @SendTo("/topic/public")
     public Messaging addUser(@Payload Messaging ultMessage, 
@@ -25,4 +26,5 @@ public class ChatController {
         headerAccessor.getSessionAttributes().put("username", ultMessage.getSender());
         return ultMessage;
     }
+
 }

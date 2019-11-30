@@ -37,11 +37,12 @@ function connect(event) {
 
 
 function onConnected() {
-    // Subscribe to the Public Topic
-    stompClient.subscribe('/topic/public', onMessageReceived);
+
+    stompClient.subscribe('/topic/public', onConnected);
+    stompClient.subscribe('/topic/private', onConnected);
 
     // Tell your username to the server
-    stompClient.send("/app/chat.addUser",
+    stompClient.send("/app/UserDTO",
         {},
         JSON.stringify({sender: username, type: 'JOIN'})
     )
@@ -51,7 +52,7 @@ function onConnected() {
 
 
 function onError(error) {
-    connectingElement.textContent = 'Could not connect to WebSocket server. Please refresh this page to try again!';
+    connectingElement.textContent = 'Could not connect to server. Please refresh this page to try again!';
     connectingElement.style.color = 'red';
 }
 

@@ -30,5 +30,19 @@ public class VerificationToken {
         return new Date(cal.getTime().getTime());
     }
 
+    public User getUser() { return user; }
+
+    public void setUser(User user) { this.user = user; }
+
+    public Date getExpiryDate() {
+        return expiryDate;
+    }
+
+    public void setExpiryDate(Date expiryDate) {
+        this.expiryDate = expiryDate;
+    }
+
+
+
     // standard constructors, getters and setters
 }

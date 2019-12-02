@@ -104,11 +104,11 @@ button.accent {
     color: #fff;
 }
 
-#username-page-page {
+#select-page {
     text-align: center;
 }
 
-.username-page-container {
+.select-page-container {
     background: #008040;
     box-shadow: 0 1px 11px rgba(15, 0, 0, 0.27);
     border-radius: 2px;
@@ -128,7 +128,7 @@ button.accent {
     margin-top: -160px;
 }
 
-.username-page-container .username-submit {
+.select-page-container .select-submit {
     margin-top: 10px;
 }
 
@@ -264,7 +264,7 @@ button.accent {
         height: calc(100% - 30px);
     }
 
-    .username-page-container {
+    .select-page-container {
         width: auto;
         margin-left: 15px;
         margin-right: 15px;

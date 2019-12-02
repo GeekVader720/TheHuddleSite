@@ -15,11 +15,14 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .mvcMatchers("/css/**", "/js/**").permitAll()
+                .mvcMatchers("/css/**", "/js/**", "/signup", "/console", "/profile", "/chatroom").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin().permitAll()
                 .loginPage("/login");
+
+        http.csrf().disable();
+        http.headers().frameOptions().disable();
     }
 
     @Bean
@@ -27,4 +30,3 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
         return new BCryptPasswordEncoder();
     }
 }
-

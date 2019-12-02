@@ -4,6 +4,9 @@ import com.javalec.spring.TheHuddleSite.model.MyUserPrincipal;
 import com.javalec.spring.TheHuddleSite.model.User;
 import com.javalec.spring.TheHuddleSite.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
@@ -46,6 +49,11 @@ public class TemplateController {
     @GetMapping("/signup")
     public String getSignup() {
         return "signup";
+    }
+
+    @GetMapping("/profile")
+    public String getProfile() {
+        return "profile";
     }
 
     @PostMapping(value = "/signup")

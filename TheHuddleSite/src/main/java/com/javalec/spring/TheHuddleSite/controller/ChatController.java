@@ -17,7 +17,6 @@ public class ChatController {
         return ultMessage;
     }
 
-
     @MessageMapping("/chat.addUser")
     @SendTo("/topic/public")
     public Messaging addUser(@Payload Messaging ultMessage, 

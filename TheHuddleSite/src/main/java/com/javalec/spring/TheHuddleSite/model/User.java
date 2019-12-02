@@ -1,5 +1,11 @@
 package com.javalec.spring.TheHuddleSite.model;
 
+
+import com.javalec.spring.TheHuddleSite.repository.UserRepository;
+import org.springframework.context.annotation.Bean;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+
 /*import com.sun.deploy.security.ValidationState;
 import com.sun.org.apache.xerces.internal.impl.xs.identity.Field;
 import com.sun.tools.classfile.Annotation;
@@ -7,7 +13,7 @@ import com.sun.xml.internal.bind.v2.model.runtime.RuntimeNonElement;
 import org.hibernate.annotations.Type;
 import org.hibernate.validator.internal.constraintvalidators.bv.EmailValidator;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
+
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.buffer.DataBufferUtils;
@@ -95,7 +101,6 @@ public class User {
         this.password = password;
     }
 
-
     public boolean isEnabled() {
         return enabled;
     }
@@ -103,14 +108,17 @@ public class User {
     public void setEnabled(boolean enabled) {
         this.enabled = enabled;
     }
-}
 
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
+
+
+}
 /*
     public class PasswordAuthentication {
-            @Bean
-            public PasswordEncoder passwordEncoder() {
-                return new BCryptPasswordEncoder();
-            }
+
 
             @Autowired
             private PasswordEncoder passwordEncoder;

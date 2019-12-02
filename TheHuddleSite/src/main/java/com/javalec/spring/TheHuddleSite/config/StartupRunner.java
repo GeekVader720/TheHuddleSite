@@ -15,22 +15,25 @@ public class StartupRunner implements ApplicationRunner {
 
     private final PasswordEncoder passwordEncoder;
 
+    private User user;
+
     @Autowired
     public StartupRunner(UserRepository userRepository, PasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
+
     }
 
 
     @Override
     public void run(ApplicationArguments args) {
         User user = new User();
-        user.setUsername("user");
-        user.setPassword(passwordEncoder.encode("password"));
+      user.setUsername("user2");
+        user.setPassword(passwordEncoder.encode("password2"));
         userRepository.save(user);
 
         User user2 = new User();
-        user2.setUsername("Some Dude");
+        user2.setUsername("user");
         user2.setPassword(passwordEncoder.encode("password"));
         userRepository.save(user2);
     }

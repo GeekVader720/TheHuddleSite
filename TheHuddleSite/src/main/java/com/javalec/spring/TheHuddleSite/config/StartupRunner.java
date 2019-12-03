@@ -28,13 +28,8 @@ public class StartupRunner implements ApplicationRunner {
     @Override
     public void run(ApplicationArguments args) {
         User user = new User();
-      user.setUsername("user2");
-        user.setPassword(passwordEncoder.encode("password2"));
+        user.setUsername("admin");
+        user.setPassword(passwordEncoder.encode("SuperiorOne#1"));
         userRepository.save(user);
-
-        User user2 = new User();
-        user2.setUsername("user");
-        user2.setPassword(passwordEncoder.encode("password"));
-        userRepository.save(user2);
     }
 }

@@ -1,19 +1,15 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
-    <meta charset="UTF-8"/>
-    <title>Your Ultimate Profile!</title>
-    <link rel="stylesheet" href="/css/signup.css"/>
+    <meta charset="UTF-8">
+    <title>Update Your Profile Here!</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
-
 </head>
 <body>
-
-
 <div class="card" style="width: 18rem;">
     <div class="card-body">
-
+        <h1>Update Your Profile Here!</h1>
         <form action="update" method="POST">
             <div class="form-group">
                 <label for="emailInput">Email</label>
@@ -36,9 +32,14 @@
                        placeholder="Enter Matching Password">
             </div>
             <div class="form-group">
-                <label for="favoriteTeamInput">What Is Your Favorite Team?</label>
+                <label for="favoriteTeamInput">What Is Your Favorite NFL Team? (Optional)</label>
                 <input type="favoriteTeam" class="form-control" id="favoriteTeamInput" name="favoriteTeam"
                        placeholder="Your Best Team!">
+            </div>
+            <div class="form-group">
+                <label for="favoriteTeamInput2">What Is Your Second Favorite NFL Team? (Optional)</label>
+                <input type="favoriteTeam2" class="form-control" id="favoriteTeamInput2" name="favoriteTeam"
+                       placeholder="Your Second Best Team!">
             </div>
             <button type="submit">Update Profile!</button>
         </form>

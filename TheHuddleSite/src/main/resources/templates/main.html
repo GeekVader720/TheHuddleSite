@@ -5,8 +5,7 @@
 </head>
 <body>
 <div class="tbox">
-    <form action="/profile" method="get" id="form2"></form>
-    <button type="submit" form="form2" value="submit">Update Profile Here!</button>
+    <h1>Welcome, <span th:text="${#authentication.principal.username}"/>!</h1>
 </div>
 
 <div class="row">
@@ -15,7 +14,11 @@
             <p>Username</p>
             <span id="username" th:text="${#authentication.principal.username}"></span>
         </div>
-        <img src="https://bsn.eu/wp-content/uploads/2016/12/user-icon-image-placeholder-300-grey.jpg">
+        <img src="https://a.espncdn.com/combiner/i?img=/redesign/assets/img/icons/ESPN-icon-football-college.png&w=288&h=288&transparent=true">
+        <div class="tbox">
+            <p><form action="/profile" method="get" id="form2"></form>
+            <button type="submit" form="form2" value="submit">View Profile!</button></p>
+        </div>
         <div class="tbox">
             <p>Favorite Boards</p>
         </div>

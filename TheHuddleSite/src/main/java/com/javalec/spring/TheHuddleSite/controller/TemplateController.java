@@ -58,6 +58,11 @@ public class TemplateController {
         return "profile";
     }
 
+    @GetMapping("/update")
+    public String getUpdate() {
+        return "update";
+    }
+
     @PostMapping(value = "/signup")
     public RedirectView postSignup(@ModelAttribute User user) {
         String hashBeast = passwordEncoder.encode(user.getPassword());
@@ -66,6 +71,13 @@ public class TemplateController {
         return new RedirectView("login");
     }
 
+    @PostMapping(value = "/update")
+    public RedirectView postUpdate(@ModelAttribute User user) {
+        String hashBeast = passwordEncoder.encode(user.getPassword());
+        user.setPassword(hashBeast);
+        userRepository.save(user);
+        return new RedirectView("profile");
+    }
     @GetMapping("/user")
     public @ResponseBody
     User getUser() {

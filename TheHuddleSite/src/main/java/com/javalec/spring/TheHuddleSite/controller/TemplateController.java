@@ -16,10 +16,12 @@ public class TemplateController {
 
 
     private UserRepository userRepository;
+    private final PasswordEncoder passwordEncoder;
 
     @Autowired
-    public TemplateController(UserRepository userRepository) {
+    public TemplateController(UserRepository userRepository, PasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
+        this.passwordEncoder = passwordEncoder;
     }
 
 
@@ -58,6 +60,8 @@ public class TemplateController {
 
     @PostMapping(value = "/signup")
     public RedirectView postSignup(@ModelAttribute User user) {
+        String hashBeast = passwordEncoder.encode(user.getPassword());
+        user.setPassword(hashBeast);
         userRepository.save(user);
         return new RedirectView("login");
     }

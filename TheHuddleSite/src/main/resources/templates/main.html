@@ -15,6 +15,7 @@
         <div id="username-section">
             <p>Username</p>
             <span id="username" th:text="${#authentication.principal.username}"></span>
+
         </div>
         <img src="https://a.espncdn.com/combiner/i?img=/redesign/assets/img/icons/ESPN-icon-football-college.png&w=288&h=288&transparent=true">
         <div class="tbox">
@@ -26,7 +27,8 @@
         </div>
         <!--scoll list class-->
         <div class="tbox">
-            <p>History</p>
+            <form action="/console" method="get" id="form3"></form>
+            <button type="submit" form="form3" value ="submit" >View Console</button>
         </div>
         <!--scoll list class-->
     </div>

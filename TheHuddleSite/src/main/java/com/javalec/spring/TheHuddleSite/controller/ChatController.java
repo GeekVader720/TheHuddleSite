@@ -26,4 +26,18 @@ public class ChatController {
         return ultMessage;
     }
 
+    @MessageMapping("/chat.sendMessage2")
+    @SendTo({"/topic/private"})
+    public Messaging sendMessage2(@Payload Messaging ultMessage) {
+        return ultMessage;
+    }
+    @MessageMapping("/chat.addUser2")
+    @SendTo({"/topic/private"})
+    public Messaging addUser2(@Payload Messaging ultMessage,
+                             SimpMessageHeaderAccessor headerAccessor) {
+        // Add username in web socket session
+        headerAccessor.getSessionAttributes().put("username", ultMessage.getSender());
+        return ultMessage;
+    }
+
 }

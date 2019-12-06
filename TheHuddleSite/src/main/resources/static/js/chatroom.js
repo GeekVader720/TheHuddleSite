@@ -1,8 +1,11 @@
 'use strict';
 
 var usernamePage = document.querySelector('#select-page');
+var usernamePage2 = document.querySelector('#select-page-2');
 var chatPage = document.querySelector('#chat-page');
+var chatPage2 = document.querySelector('#chat-page-2');
 var usernameForm = document.querySelector('#usernameForm');
+var usernameForm2 = document.querySelector('#usernameForm2');
 var messageForm = document.querySelector('#messageForm');
 var messageInput = document.querySelector('#message');
 var messageArea = document.querySelector('#messageArea');
@@ -22,11 +25,27 @@ function connect(event) {
     if(username) {
         usernamePage.classList.add('hidden');
         chatPage.classList.remove('hidden');
+        usernamePage2.classList.remove('hidden');
 
         var socket = new SockJS('/ws');
         stompClient = Stomp.over(socket);
 
         stompClient.connect({}, onConnected, onError);
+    }
+    event.preventDefault();
+}
+
+function connect2(event) {
+    username = document.querySelector('#name2').value.trim();
+
+    if(username) {
+        usernamePage2.classList.add('hidden');
+        chatPage2.classList.remove('hidden');
+
+        var socket = new SockJS('/we');
+        stompClient = Stomp.over(socket);
+
+        stompClient.connect({}, onConnected2, onError);
     }
     event.preventDefault();
 }
@@ -40,7 +59,19 @@ function onConnected() {
     stompClient.send("/app/chat.addUser",
         {},
         JSON.stringify({sender: username, type: 'JOIN'})
-    )
+    );
+
+    connectingElement.classList.add('hidden');
+}
+function onConnected2() {
+    // Subscribe to the Public Topic
+    stompClient.subscribe('/topic/private', onMessageReceived);
+
+    // Tell your username to the server
+    stompClient.send("/app/chat.addUser2",
+        {},
+        JSON.stringify({sender: username, type: 'JOIN'})
+    );
 
     connectingElement.classList.add('hidden');
 }
@@ -66,6 +97,19 @@ function sendMessage(event) {
     event.preventDefault();
 }
 
+function sendMessage2(event) {
+    var messageContent = messageInput.value.trim();
+    if(messageContent && stompClient) {
+        var chatMessage = {
+            sender: username,
+            content: messageInput.value,
+            type: 'CHAT'
+        };
+        stompClient.send("/app/chat.sendMessage2", {}, JSON.stringify(chatMessage));
+        messageInput.value = '';
+    }
+    event.preventDefault();
+}
 
 function onMessageReceived(payload) {
     var message = JSON.parse(payload.body);
@@ -114,5 +158,6 @@ function getAvatarColor(messageSender) {
     return colors[index];
 }
 
+usernameForm2.addEventListener('submit', connect2, true)
 usernameForm.addEventListener('submit', connect, true)
 messageForm.addEventListener('submit', sendMessage, true)

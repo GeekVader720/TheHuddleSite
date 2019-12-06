@@ -62,6 +62,10 @@ public class User {
 
     private String password;
 
+  /*  private String favoriteTeam;
+
+    private String secondTeam;*/
+
     private boolean enabled;
 
     public User() {
@@ -101,6 +105,18 @@ public class User {
         this.password = password;
     }
 
+/*    public String getFavoriteTeam() { return favoriteTeam; }
+
+    public void setFavoriteTeam(String favoriteTeam) {
+        this.favoriteTeam = favoriteTeam;
+    }
+
+    public String getSecondTeam() { return secondTeam; }
+
+    public void setSecondTeam(String secondTeam) {
+        this.secondTeam = secondTeam;
+    }
+*/
     public boolean isEnabled() {
         return enabled;
     }
@@ -114,60 +130,4 @@ public class User {
         return new BCryptPasswordEncoder();
     }
 
-
 }
-/*
-    public class PasswordAuthentication {
-
-
-            @Autowired
-            private PasswordEncoder passwordEncoder;
-
-            public User registerNewUserAccount(UserDto accountDto) throws EmailExistsException {
-                if (emailExist(accountDto.getEmail())) {
-                    throw new EmailExistsException(
-                            "There is an account with that email address:" + accountDto.getEmail());
-                }
-                User user = new User();
-                user.setEmail(accountDto.getEmail());
-
-                user.setPassword(passwordEncoder.encode(accountDto.getPassword()));
-
-                user.setRole(new Role(Integer.valueOf(1), user));
-                return repository.save(user);
-            }
-
-            public ModelAndView registerUserAccount(
-                    @ModelAttribute("user") @Valid UserDto accountDto,
-                    BindingResult result, WebRequest request, Errors errors) {
-            }
-
-        }
-
-        @Autowired
-        private UserDetailsService userDetailsService;
-
-        @Bean
-        public DaoAuthenticationProvider authProvider() {
-            DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
-            authProvider.setUserDetailsService(userDetailsService);
-            authProvider.setPasswordEncoder(encoder());
-            return authProvider;
-        }
-
-        @Configuration
-        @ComponentScan(basePackages = {"org.baeldung.security"})
-        @EnableWebSecurity
-        public class SecSecurityConfig extends WebSecurityConfigurerAdapter {
-
-            protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-                auth.authenticationProvider(authProvider());
-            }
-
-            protected AuthenticationManager authenticationManager() throws Exception {
-                return super.authenticationManager();
-
-            }
-        }
-    }
-}*/

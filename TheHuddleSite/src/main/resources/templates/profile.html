@@ -58,6 +58,7 @@
         opacity: 0.7;
     }
 
+    background-image
 </style>
 <body>
 
@@ -67,17 +68,20 @@
 
 
 <div class="card">
-    <h1><!--/*@thymesVar id="username" type="javafx"*/-->
-    <span th:text="${#authentication.principal.username}" />, </h1>
-    <h2>Welcome To Your Profile Page!</h2>
+    <form action="/main" method="get" id="form1"></form>
+    <button type="submit" form="form1" value ="submit" >Return To Main</button>
+
+
+    <h2> <span th:text="${#authentication.principal.username}" />, </h2>
+        <h2>Welcome To Your Profile Page!</h2>
     <img src="https://a.espncdn.com/combiner/i?img=/redesign/assets/img/icons/ESPN-icon-football-college.png&w=288&h=288&transparent=true"
           style="width:100%">
    
-    <p class="title">CEO & Founder, Example</p>
-    <p>Harvard University</p>
+    <p class="title">Email Insert Here</p>
+    <p>Football Enthusiast</p>
     <a href="#"><i class="fa fa-envelope"></i></a>
-    <a href="#"><i class="fa fa-twitter"></i></a>
-    <a href="#"><i class="fa fa-linkedin"></i></a>
+    <p>Link account to <a href="#"><i class="fa fa-twitter"></i></a></p>
+    <p>Link account to <a href="#"><i class="fa fa-linkedin"></i></a></p>
     <p>Link account to <a href="#"><i class="fa fa-facebook"></i></a></p>
     <p><form action="/update" method="get" id="form2"></form>
     <button type="submit" form="form2" value="submit">Update Profile</button></p>

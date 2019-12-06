@@ -1,3 +1,143 @@
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body{
+    margin: 15px;
+    padding: 0px;
+    font-weight: 400;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 1rem;
+    line-height: 1.58;
+    background-color: #404040;
+    height: 100%;
+}
+
+body:before {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #404040;
+    content: "";
+    z-index: 0;
+}
+
+.update-page-container{
+    position: absolute;
+    left: 0;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+}
+
+h1{
+    color: #ffffff;
+}
+
+button {
+    box-shadow: none;
+    border: 1px solid transparent;
+    font-size: 14px;
+    outline: none;
+    line-height: 100%;
+    white-space: nowrap;
+    vertical-align: middle;
+    padding: 0.6rem 1rem;
+    border-radius: 2px;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    min-height: 38px;
+    bottom: 25%;
+}
+
+.update-page-container{
+    background: #b4b4b4;
+    box-shadow: 0 1px 11px rgba(15, 0, 0, 0.27);
+    border-radius: 10px;
+    width: 100%;
+    max-width: 500px;
+    display: inline-block;
+    margin-top: 15px;
+    vertical-align: top;
+    position: relative;
+    padding: 35px 55px 35px;
+    min-height: 250px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    margin-top: -160px;
+
+}
+.update-page-container .update-submit{
+    margin-top: 10px;
+}
+
+.birthdateInput-page-container {
+    background: #008040;
+    box-shadow: 0 1px 11px rgba(15, 0, 0, 0.27);
+    border-radius: 2px;
+    width: 100%;
+    max-width: 500px;
+    display: inline-block;
+    margin-top: 42px;
+    vertical-align: middle;
+    position: relative;
+    padding: 35px 55px 35px;
+    min-height: 250px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    margin-top: -160px;
+}
+
+button.default {
+    background-color: #2eb82e;
+    color: #2eb82e;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12);
+}
+
+button.primary {
+    background-color: #2eb82e;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12);
+    color: #2eb82e;
+}
+
+button.accent {
+    background-color: #2eb82e;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12);
+    color: #ffffff;
+}
+
+
+
+input {
+    padding-left: 10px;
+    outline: none;
+    border-radius: 25px;
+}
+
+.form-control {
+    width: 100%;
+    min-height: 38px;
+    font-size: 11pt;
+    border: 1px solid #c8c8c8;
+
+
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
 button {
     box-shadow: none;
     border: 1px solid transparent;

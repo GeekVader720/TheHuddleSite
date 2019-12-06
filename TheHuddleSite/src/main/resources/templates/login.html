@@ -7,8 +7,12 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+
 </head>
+
 <body>
+<h2 class="title">The HUDDLE</h2>
+
 <div id="login-page">
     <div class="login-page-container">
         <h1 class="title">Login</h1>
@@ -19,10 +23,12 @@
             You have been logged out.
         </div>
         <form th:action="@{/login}" method="post">
+            <form id="usernameForm" name="usernameForm">
             <div class="form-group">
                 <input type="text" id="username" name="username" placeholder="Username" autocomplete="off"
                        class="form-control"/>
             </div>
+            <form id="passwordForm" name="passwordForm">
             <div class="form-group">
                 <input type="password" id="password" name="password" placeholder="Password" autocomplete="off"
                        class="form-control"/>

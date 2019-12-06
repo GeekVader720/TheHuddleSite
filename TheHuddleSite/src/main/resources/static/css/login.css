@@ -8,34 +8,38 @@ body {
     margin: 15px;
     padding: 15px;
     font-weight: 400;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Lucida Console", Monaco, monospace;
     font-size: 1rem;
     line-height: 1.58;
-    color: #c0c0c0;
-    background-color: #0080ff;
+    color: #404040;
+    background-color: #404040;
     height: 100%;
 }
 
 body:before {
-    height: 50%;
+    height: 100%;
     width: 100%;
     position: absolute;
     top: 0;
     left: 0;
-    background: #f46f0b;
-    content: "";
+    background: #404040;
+    content: "#h2";
     z-index: 0;
 }
+
 
 .form-control {
     width: 100%;
     min-height: 38px;
     font-size: 15px;
-    border: 1px solid #c8c8c8;
+    border: 1px solid #424242;
+    border-radius: 25px;
+
 }
 
 .form-group {
     margin-bottom: 15px;
+    border-radius: 25px;
 }
 button {
     box-shadow: none;
@@ -72,16 +76,50 @@ button.accent {
 input {
     padding-left: 10px;
     outline: none;
+    border-radius: 25px;
 }
 
 #login-page {
     text-align: center;
+
+
 }
 
 .login-page-container {
-    background: #008040;
+    background: #696969;
     box-shadow: 0 1px 11px rgba(15, 0, 0, 0.27);
-    border-radius: 2px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 500px;
+    display: inline-block;
+    margin-top: 42px;
+    vertical-align: middle;
+    position: relative;
+    padding: 35px 55px 35px;
+    min-height: 250px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    margin-top: -160px;
+        color: #404040;
+}
+
+
+.login-page-container .login-submit {
+    margin-top: 10px;
+}
+
+#username-page {
+    text-align: center;
+    border-radius: 25px;
+
+}
+.username-page-container {
+    background: #696969;
+    box-shadow: 0 1px 11px rgba(15, 0, 0, 0.27);
+    border-radius: 15px;
     width: 100%;
     max-width: 500px;
     display: inline-block;
@@ -98,18 +136,10 @@ input {
     margin-top: -160px;
 }
 
-.login-page-container .login-submit {
-    margin-top: 10px;
-}
-
-#login-page {
-    text-align: center;
-}
-
 .password-page-container {
     background: #008040;
     box-shadow: 0 1px 11px rgba(15, 0, 0, 0.27);
-    border-radius: 2px;
+    border-radius: 25px;
     width: 100%;
     max-width: 500px;
     display: inline-block;
@@ -128,4 +158,11 @@ input {
 
 .registration-page-container .registration-submit {
     margin-top: 10px;
+
+}
+h2:before {
+    position: absolute;
+    text-align: center;
+    font-size: 100px;
+
 }

@@ -15,13 +15,10 @@ public class StartupRunner implements ApplicationRunner {
 
     private final PasswordEncoder passwordEncoder;
 
-    private User user;
-
     @Autowired
     public StartupRunner(UserRepository userRepository, PasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
-
     }
 
 

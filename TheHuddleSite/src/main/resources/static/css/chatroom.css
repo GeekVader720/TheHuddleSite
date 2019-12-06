@@ -10,24 +10,24 @@ html,body {
 }
 
 body {
-    margin: 0;
-    padding: 0;
+    margin: 15px;
+    padding: 15px;
     font-weight: 400;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Lucida Console", Monaco, monospace;
     font-size: 1rem;
     line-height: 1.58;
-    color: #cccccc;
-    background-color: #0080ff;
+    color: #404040;
+    background-color: #404040;
     height: 100%;
 }
 
 body:before {
-    height: 50%;
+    height: 100%;
     width: 100%;
     position: absolute;
     top: 0;
     left: 0;
-    background: #f46f0b;
+    background: #61000d;
     content: "";
     z-index: 0;
 }
@@ -46,7 +46,7 @@ body:before {
     width: 100%;
     min-height: 38px;
     font-size: 15px;
-    border: 1px solid #c8c8c8;
+    border: 1px solid #000000;
 }
 
 .form-group {
@@ -87,48 +87,73 @@ button {
 }
 
 button.default {
-    background-color: #00ffff;
+    background-color: #474449;
     color: #333;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12);
 }
 
 button.primary {
-    background-color: #804040;
+    background-color: #2f4d80;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12);
-    color: #ff3;
+    color: #4e52ff;
 }
 
 button.accent {
-    background-color: #ff4743;
+    background-color: #5898ff;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12);
     color: #fff;
 }
 
 #select-page {
     text-align: center;
+    position:relative;
+    height:100%;
 }
 
 .select-page-container {
-    background: #008040;
+    background: rgba(0, 67, 133, 0.93);
     box-shadow: 0 1px 11px rgba(15, 0, 0, 0.27);
     border-radius: 2px;
     width: 100%;
     max-width: 500px;
     display: inline-block;
-    margin-top: 42px;
     vertical-align: middle;
-    position: relative;
+    horiz-align: left;
+    margin-top: 50px;
     padding: 35px 55px 35px;
     min-height: 250px;
-    position: absolute;
+    float:left;
     top: 50%;
     left: 0;
     right: 0;
-    margin: 0 auto;
-    margin-top: -160px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.select-page-container-right {
+    background: rgba(0, 67, 133, 0.93);
+    box-shadow: 0 1px 11px rgba(15, 0, 0, 0.27);
+    border-radius: 2px;
+    width: 100%;
+    max-width: 500px;
+    display: inline-block;
+    vertical-align: middle;
+    horiz-align: right;
+    margin-top: 50px;
+    padding: 35px 55px 35px;
+    min-height: 250px;
+    float:right;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .select-page-container .select-submit {
+    margin-top: 10px;
+}
+.select-page-container-right .select-right-submit {
     margin-top: 10px;
 }
 
@@ -138,20 +163,32 @@ button.accent {
 }
 
 .chat-container {
+       max-width: 700px;
+       margin-left: auto;
+       margin-right: auto;
+       background-color: #3033ff;
+       box-shadow: 0 1px 11px rgba(0, 0, 0, 0.27);
+       margin-top: 30px;
+       height: calc(100% - 60px);
+       max-height: 600px;
+       float: left;
+   }
+
+.chat-container-right {
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
-    background-color: #fff;
+    background-color: #3033ff;
     box-shadow: 0 1px 11px rgba(0, 0, 0, 0.27);
     margin-top: 30px;
     height: calc(100% - 60px);
     max-height: 600px;
-    position: relative;
+    float: right;
 }
 
 #chat-page ul {
     list-style-type: none;
-    background-color: #ff3;
+    background-color: #fff1f8;
     margin: 0;
     overflow: auto;
     overflow-y: scroll;
